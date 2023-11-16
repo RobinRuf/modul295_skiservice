@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\.gitignore"
     },
     {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\11-skiservice\\client\\registration-api.rest",
-      "PackagePath": "staticwebassets\\11-skiservice\\client\\registration-api.rest"
-    },
-    {
       "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\README.md",
       "PackagePath": "staticwebassets\\README.md"
     },
@@ -119,54 +115,6 @@
     {
       "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\policies.html",
       "PackagePath": "staticwebassets\\policies.html"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\.env",
-      "PackagePath": "staticwebassets\\server\\.env"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\controllers\\registration.controller.js",
-      "PackagePath": "staticwebassets\\server\\controllers\\registration.controller.js"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\data\\datastore.js",
-      "PackagePath": "staticwebassets\\server\\data\\datastore.js"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\data\\registration-save.json",
-      "PackagePath": "staticwebassets\\server\\data\\registration-save.json"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\data\\registration.json",
-      "PackagePath": "staticwebassets\\server\\data\\registration.json"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\models\\registration.model.js",
-      "PackagePath": "staticwebassets\\server\\models\\registration.model.js"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\package-lock.json",
-      "PackagePath": "staticwebassets\\server\\package-lock.json"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\package.json",
-      "PackagePath": "staticwebassets\\server\\package.json"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\readme.md",
-      "PackagePath": "staticwebassets\\server\\readme.md"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\routes\\registration.route.js",
-      "PackagePath": "staticwebassets\\server\\routes\\registration.route.js"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\server.js",
-      "PackagePath": "staticwebassets\\server\\server.js"
-    },
-    {
-      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\swagger.json",
-      "PackagePath": "staticwebassets\\server\\swagger.json"
     },
     {
       "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\services.html",
