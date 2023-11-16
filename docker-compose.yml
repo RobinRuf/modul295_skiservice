@@ -1,0 +1,38 @@
+version: '3.8' # latest Version of Docker Compose
+
+services:
+  api:
+    build: ./Modul295_SkiService_WebAPI
+    ports:
+      - "80:80" # Expose the API and static files on port 80
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=db;Database=skiservice;User=root;Password=HelloWorld1995@
+
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: HelloWorld1995@
+      MYSQL_DATABASE: skiservice
+      MYSQL_USER: robin
+      MYSQL_PASSWORD: HelloWorld1995@@
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: robin
+      PMA_PASSWORD: HelloWorld1995@@
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:

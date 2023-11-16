@@ -1,0 +1,213 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\.gitignore",
+      "PackagePath": "staticwebassets\\.gitignore"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\11-skiservice\\client\\registration-api.rest",
+      "PackagePath": "staticwebassets\\11-skiservice\\client\\registration-api.rest"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\README.md",
+      "PackagePath": "staticwebassets\\README.md"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\about.html",
+      "PackagePath": "staticwebassets\\about.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\ico\\Instagram_Glyph_Black.png",
+      "PackagePath": "staticwebassets\\assets\\ico\\Instagram_Glyph_Black.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\ico\\f_logo_RGB-Black_58.png",
+      "PackagePath": "staticwebassets\\assets\\ico\\f_logo_RGB-Black_58.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\ico\\logo-black.png",
+      "PackagePath": "staticwebassets\\assets\\ico\\logo-black.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\anabell.png",
+      "PackagePath": "staticwebassets\\assets\\img\\anabell.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\bindung.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\bindung.jpg"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\grosser_service.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\grosser_service.jpg"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\john.png",
+      "PackagePath": "staticwebassets\\assets\\img\\john.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\kleiner_service.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\kleiner_service.jpg"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\logo_white.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo_white.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\rennski_service.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rennski_service.jpg"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\img\\timon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\timon.png"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\assets\\video\\videoNoText.mp4",
+      "PackagePath": "staticwebassets\\assets\\video\\videoNoText.mp4"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\contact.html",
+      "PackagePath": "staticwebassets\\contact.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\form.html",
+      "PackagePath": "staticwebassets\\form.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\formconfirm.html",
+      "PackagePath": "staticwebassets\\formconfirm.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\formerror.html",
+      "PackagePath": "staticwebassets\\formerror.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\js\\calendar.js",
+      "PackagePath": "staticwebassets\\js\\calendar.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\js\\form.js",
+      "PackagePath": "staticwebassets\\js\\form.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\js\\videoText.js",
+      "PackagePath": "staticwebassets\\js\\videoText.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\package-lock.json",
+      "PackagePath": "staticwebassets\\package-lock.json"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\package.json",
+      "PackagePath": "staticwebassets\\package.json"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\policies.html",
+      "PackagePath": "staticwebassets\\policies.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\.env",
+      "PackagePath": "staticwebassets\\server\\.env"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\controllers\\registration.controller.js",
+      "PackagePath": "staticwebassets\\server\\controllers\\registration.controller.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\data\\datastore.js",
+      "PackagePath": "staticwebassets\\server\\data\\datastore.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\data\\registration-save.json",
+      "PackagePath": "staticwebassets\\server\\data\\registration-save.json"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\data\\registration.json",
+      "PackagePath": "staticwebassets\\server\\data\\registration.json"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\models\\registration.model.js",
+      "PackagePath": "staticwebassets\\server\\models\\registration.model.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\package-lock.json",
+      "PackagePath": "staticwebassets\\server\\package-lock.json"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\package.json",
+      "PackagePath": "staticwebassets\\server\\package.json"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\readme.md",
+      "PackagePath": "staticwebassets\\server\\readme.md"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\routes\\registration.route.js",
+      "PackagePath": "staticwebassets\\server\\routes\\registration.route.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\server.js",
+      "PackagePath": "staticwebassets\\server\\server.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\server\\swagger.json",
+      "PackagePath": "staticwebassets\\server\\swagger.json"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\services.html",
+      "PackagePath": "staticwebassets\\services.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\styles.css",
+      "PackagePath": "staticwebassets\\styles.css"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\tailwind.config.js",
+      "PackagePath": "staticwebassets\\tailwind.config.js"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\templates\\footer.html",
+      "PackagePath": "staticwebassets\\templates\\footer.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\templates\\head.html",
+      "PackagePath": "staticwebassets\\templates\\head.html"
+    },
+    {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\Modul295_SkiService_WebAPI\\wwwroot\\templates\\navigation.html",
+      "PackagePath": "staticwebassets\\templates\\navigation.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Modul295_SkiService_WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Modul295_SkiService_WebAPI.props",
+      "PackagePath": "build\\Modul295_SkiService_WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Modul295_SkiService_WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\Modul295_SkiService_WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Modul295_SkiService_WebAPI.props",
+      "PackagePath": "buildTransitive\\Modul295_SkiService_WebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
