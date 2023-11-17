@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6jyLKoDf6zLgeeZQqkI0Fl2DQDVQx2IWU5MDswjTBOs=",
+  "Hash": "8LtsYTsDZ4HzXYaDxpCJSpcLiupnWevUdKmrVToZGzQ=",
   "Source": "SkiService",
   "BasePath": "_content/SkiService",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\api\\authorizedLogin.js"
+    },
+    {
+      "Identity": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\deleteOrder.js",
+      "SourceId": "SkiService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\",
+      "BasePath": "_content/SkiService",
+      "RelativePath": "api/deleteOrder.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\api\\deleteOrder.js"
     },
     {
       "Identity": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\fetchOrders.js",
