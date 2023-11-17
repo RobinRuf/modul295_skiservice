@@ -77,3 +77,4 @@ C:\GitHub\Modul295\SkiServiceProject\SkiService\obj\Debug\net7.0\refint\SkiServi
 C:\GitHub\Modul295\SkiServiceProject\SkiService\obj\Debug\net7.0\SkiService.pdb
 C:\GitHub\Modul295\SkiServiceProject\SkiService\obj\Debug\net7.0\SkiService.genruntimeconfig.cache
 C:\GitHub\Modul295\SkiServiceProject\SkiService\obj\Debug\net7.0\ref\SkiService.dll
+C:\GitHub\Modul295\SkiServiceProject\SkiService\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
