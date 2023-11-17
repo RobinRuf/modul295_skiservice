@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul295_SkiService_WebAPI", "Modul295_SkiService_WebAPI.csproj", "{FC63A47D-F737-4762-A639-42A163C17270}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiService", "SkiService\SkiService.csproj", "{D33B51F0-365B-4A78-A774-B4878B97BB70}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiService.Tests", "SkiService.Tests\SkiService.Tests.csproj", "{BED4C6D0-8240-47B2-9AC5-20AED169AADF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC63A47D-F737-4762-A639-42A163C17270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC63A47D-F737-4762-A639-42A163C17270}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC63A47D-F737-4762-A639-42A163C17270}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC63A47D-F737-4762-A639-42A163C17270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33B51F0-365B-4A78-A774-B4878B97BB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33B51F0-365B-4A78-A774-B4878B97BB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33B51F0-365B-4A78-A774-B4878B97BB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33B51F0-365B-4A78-A774-B4878B97BB70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED4C6D0-8240-47B2-9AC5-20AED169AADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED4C6D0-8240-47B2-9AC5-20AED169AADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED4C6D0-8240-47B2-9AC5-20AED169AADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED4C6D0-8240-47B2-9AC5-20AED169AADF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
