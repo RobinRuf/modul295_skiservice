@@ -1,7 +1,7 @@
 window.deleteOrder = async function deleteOrder(orderId) {
-    // Abfragen des Tokens aus dem LocalStorage
-    const token = localStorage.getItem('skiserviceToken'); // Ersetzen Sie 'skiserviceToken' durch den tatsächlichen Schlüssel, unter dem der Token gespeichert ist
-  
+    // get token from localstorage
+    const token = localStorage.getItem('skiserviceToken'); 
+
     if (!token) {
       alert('Sie sind nicht angemeldet.');
       return;

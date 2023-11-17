@@ -69,5 +69,21 @@ namespace SkiService.Controllers
             return Ok();
         }
 
+        [HttpPatch("{orderId}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateServiceOrderStatus(int orderId, [FromBody] UpdateStatusDto updateStatusDto)
+        {
+            var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
+            if (serviceOrder == null)
+            {
+                return NotFound();
+            }
+
+            serviceOrder.Status = updateStatusDto.Status;
+            _context.ServiceOrders.Update(serviceOrder);
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }
