@@ -1,7 +1,10 @@
-﻿namespace SkiService.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SkiService.Models
 {
     public class ServiceOrder
     {
+        [Key]
         public int OrderID { get; set; }
         public int? EmployeeID { get; set; }
         public string ServiceType { get; set; }
