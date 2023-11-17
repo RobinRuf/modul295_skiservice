@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\about.html"
     },
     {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\requestService.js",
+      "PackagePath": "staticwebassets\\api\\requestService.js"
+    },
+    {
       "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\assets\\ico\\Instagram_Glyph_Black.png",
       "PackagePath": "staticwebassets\\assets\\ico\\Instagram_Glyph_Black.png"
     },

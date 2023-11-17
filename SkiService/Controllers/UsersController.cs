@@ -32,7 +32,6 @@ namespace SkiService.Controllers
                 CustomerName = serviceOrderDto.CustomerName,
                 CustomerEmail = serviceOrderDto.CustomerEmail,
                 CustomerPhone = serviceOrderDto.CustomerPhone,
-                EmployeeID = serviceOrderDto.EmployeeID,
                 ServiceType = serviceOrderDto.ServiceType,
                 Priority = serviceOrderDto.Priority,
                 Status = serviceOrderDto.Status,

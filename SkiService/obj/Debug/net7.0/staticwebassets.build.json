@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A1wjwR2vwQLHXbgfl5GT8DjKnigdQTl1LWHVlm585PE=",
+  "Hash": "vC0WI7fRwkY22+ECnJRpPu5Uq+GANvEpSVZZDqeixgQ=",
   "Source": "SkiService",
   "BasePath": "_content/SkiService",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\about.html"
+    },
+    {
+      "Identity": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\requestService.js",
+      "SourceId": "SkiService",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\",
+      "BasePath": "_content/SkiService",
+      "RelativePath": "api/requestService.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\api\\requestService.js"
     },
     {
       "Identity": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\assets\\ico\\f_logo_RGB-Black_58.png",

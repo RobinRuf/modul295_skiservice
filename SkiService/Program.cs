@@ -1,6 +1,11 @@
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SkiService.Models;
+using SkiService.Services;
+using System.Text;
 
 namespace SkiService
 {
@@ -9,6 +14,9 @@ namespace SkiService
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Add Token Service
+            builder.Services.AddScoped<ITokenService, TokenService>();
 
             // MySQL COnfiguration
             var connectionString = builder.Configuration.GetConnectionString("DBConnection"); // Stelle sicher, dass du einen Verbindungsstring in deiner appsettings.json hast
@@ -21,7 +29,33 @@ namespace SkiService
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "JWT", Version = "v1" });
+            });
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder => builder.AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader());
+            });
+
+            // JWT
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
 
             var app = builder.Build();
 
@@ -29,7 +63,7 @@ namespace SkiService
             // and we need access to Swagger (in Production we would not do this, because nobody should have 
             // access to our API Endpoints)
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JWT v1"));
 
             app.UseHttpsRedirection();
 
@@ -37,6 +71,10 @@ namespace SkiService
             app.UseStaticFiles(); // Gives the ability of serving static web pages
             app.UseRouting(); // added for static website support
 
+            app.UseCors("AllowAllOrigins");
+
+            // Auth
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

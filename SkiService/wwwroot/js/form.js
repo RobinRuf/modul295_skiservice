@@ -121,41 +121,6 @@ function validatePhoneNumber(field) {
   console.log("Telefon richtig");
 }
 
-function postData(firstName, lastName, email) {
-  const post = {
-    name: firstName + " " + lastName,
-    email: email,
-    phone: document.getElementById("phone").value,
-    priority: document.querySelector('input[name="list-radio"]:checked').value,
-    service: document.getElementById("serviceDropdown").value,
-    create_date: document.getElementById("startDate").value,
-    pickup_date: document.getElementById("endDate").value,
-  };
-
-  fetch("http://localhost:5000/api/registration", {
-    method: "POST",
-    body: JSON.stringify({
-      name: post.name,
-      email: post.email,
-      phone: post.phone,
-      priority: post.priority,
-      service: post.service,
-      create_date: post.create_date,
-      pickup_date: post.pickup_date,
-    }),
-    headers: { "Content-type": "application/json; charset=UTF-8" },
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(JSON.stringify(json));
-      window.location.href = "formconfirm.html";
-    })
-    .catch((error) => {
-      console.log("Es gab einen Fehler", error);
-      window.location.href = "formerror.html";
-    });
-}
-
 const params = new URLSearchParams(window.location.search);
 const dropdownValue = params.get("service");
 

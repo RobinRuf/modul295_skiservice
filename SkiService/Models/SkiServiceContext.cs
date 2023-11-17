@@ -11,7 +11,6 @@ namespace SkiService.Models
         }
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<ServiceOrder> ServiceOrders { get; set; }
     }
 }
