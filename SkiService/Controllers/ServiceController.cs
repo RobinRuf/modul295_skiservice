@@ -85,5 +85,27 @@ namespace SkiService.Controllers
 
             return Ok();
         }
+
+        [HttpPatch("assign/{orderId}")]
+        [Authorize]
+        public async Task<IActionResult> AssignOrderToEmployee(int orderId, [FromBody] AssignOrderDto assignOrderDto)
+        {
+            var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
+            if (serviceOrder == null)
+            {
+                return NotFound();
+            }
+
+            var employee = await _context.Employees.FirstOrDefaultAsync(e => e.Username == assignOrderDto.Username);
+            if (employee == null)
+            {
+                return NotFound("Mitarbeiter nicht gefunden.");
+            }
+
+            serviceOrder.EmployeeID = employee.EmployeeID;
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }

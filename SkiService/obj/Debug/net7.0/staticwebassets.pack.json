@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\api\\requestService.js"
     },
     {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\setEmployee.js",
+      "PackagePath": "staticwebassets\\api\\setEmployee.js"
+    },
+    {
       "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\updateState.js",
       "PackagePath": "staticwebassets\\api\\updateState.js"
     },
