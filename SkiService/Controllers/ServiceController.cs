@@ -46,7 +46,11 @@ namespace SkiService.Controllers
             return StatusCode(StatusCodes.Status201Created, serviceOrder);
         }
 
-
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ServiceOrder>>> GetServiceOrders()
+        {
+            return await _context.ServiceOrders.ToListAsync();
+        }
 
     }
 }

@@ -8,17 +8,55 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
-      rel="stylesheet"
-    />
     <link href="./css/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png" />
-
     <!-- TEMPLATE_END: templates\head.html -->
-    <title>Online Anfrage</title>
+    <title>Mitarbeiter Login</title>
   </head>
   <body class="flex flex-col">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tokenKey = "skiserviceToken";
+
+        // Prüfen, ob ein Token im LocalStorage existiert
+        const token = localStorage.getItem(tokenKey);
+        console.log("Token: " + token);
+
+        if (token) {
+          const username = getUsernameFromToken(token);
+
+          if (username) {
+            // Benutzername aus dem Token extrahiert, weiterleiten zur orders.html
+            window.location.href = `orders.html?username=${encodeURIComponent(
+              username
+            )}`;
+          } else {
+            // log
+            console.log("Kein Username im Token gefunden");
+          }
+        }
+      });
+
+      function getUsernameFromToken(token) {
+        try {
+          const base64Url = token.split(".")[1];
+          const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+          const jsonPayload = decodeURIComponent(
+            atob(base64)
+              .split("")
+              .map(function (c) {
+                return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+              })
+              .join("")
+          );
+
+          const payload = JSON.parse(jsonPayload);
+          return payload["nameid"]; // Claim Key = NameId
+        } catch (e) {
+          return null; // if error, return null
+        }
+      }
+    </script>
+
     <!-- TEMPLATE_START: templates\navigation.html -->
     <nav
       class="fixed z-50 w-full border-gray-200 dark:bg-gray-900 bg-slate-100"
@@ -120,36 +158,52 @@
         </div>
       </div>
     </nav>
-
     <!-- TEMPLATE_END: templates\navigation.html -->
+
     <div
-      class="flex items-center justify-center min-h-[70vh] flex-1 flex-col bg-slate-50 dark:bg-slate-800"
-      id="form-wrapper"
+      class="flex items-center justify-center min-h-[70vh] flex-1 flex-col bg-slate-50 dark:bg-slate-800 mt-20"
     >
-      <div class="text-center">
-        <div class="inline-flex p-4 bg-green-100 rounded-full">
-          <div class="p-4 bg-green-200 rounded-full stroke-green-600">
-            <span
-              class="flex text-5xl text-green-950 material-symbols-outlined"
+      <div
+        class="w-full max-w-md p-4 mb-10 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700"
+      >
+        <form id="loginForm">
+          <!-- Login Formular -->
+          <div class="mb-6">
+            <label
+              for="username"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Benutzername:</label
             >
-              done_outline
-            </span>
-            <path
-              d="M17 16L22 21M22 16L17 21"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
+            <input
+              type="text"
+              id="username"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              required
+            />
           </div>
-        </div>
+          <div class="mb-6">
+            <label
+              for="password"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Passwort:</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+          >
+            Login
+          </button>
+        </form>
       </div>
-      <h1 class="mt-5 text-[36px] font-bold dark:text-white lg:text-[50px]">
-        Vielen Dank für Ihre Anfrage!
-      </h1>
-      <p class="mt-3 text-neutral-500 dark:text-neutral-300 lg:text-lg">
-        Ihre Anfrage wurde erfolgreich übermittelt.
-      </p>
     </div>
+
     <!-- TEMPLATE_START: templates\footer.html -->
     <footer class="flex bg-slate-100 snap-start dark:bg-gray-900">
       <div class="w-full p-4 mx-auto md:py-4">
@@ -206,7 +260,8 @@
         >
       </div>
     </footer>
-    <script src="./js/main.js"></script>
     <!-- TEMPLATE_END: templates\footer.html -->
+    <script src="./js/main.js"></script>
+    <script src="./api/authorizedLogin.js"></script>
   </body>
 </html>
