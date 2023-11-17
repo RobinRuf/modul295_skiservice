@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SkiService.Models;
@@ -50,6 +51,22 @@ namespace SkiService.Controllers
         public async Task<ActionResult<IEnumerable<ServiceOrder>>> GetServiceOrders()
         {
             return await _context.ServiceOrders.ToListAsync();
+        }
+
+        [HttpDelete("{orderId}")]
+        [Authorize]
+        public async Task<IActionResult> DeleteServiceOrder(int orderId)
+        {
+            var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
+            if (serviceOrder == null)
+            {
+                return NotFound();
+            }
+
+            _context.ServiceOrders.Remove(serviceOrder);
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
 
     }

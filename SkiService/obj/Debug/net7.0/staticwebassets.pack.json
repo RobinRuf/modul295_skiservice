@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\api\\authorizedLogin.js"
     },
     {
+      "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\deleteOrder.js",
+      "PackagePath": "staticwebassets\\api\\deleteOrder.js"
+    },
+    {
       "Id": "C:\\GitHub\\Modul295\\SkiServiceProject\\SkiService\\wwwroot\\api\\fetchOrders.js",
       "PackagePath": "staticwebassets\\api\\fetchOrders.js"
     },
