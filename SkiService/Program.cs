@@ -1,8 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
-using Modul295_SkiService_WebAPI.Models;
+using SkiService.Models;
 
-namespace Modul295_SkiService_WebAPI
+namespace SkiService
 {
     public class Program
     {
@@ -11,7 +11,7 @@ namespace Modul295_SkiService_WebAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // MySQL COnfiguration
-            var connectionString = builder.Configuration.GetConnectionString("MariaDbConnection"); // Stelle sicher, dass du einen Verbindungsstring in deiner appsettings.json hast
+            var connectionString = builder.Configuration.GetConnectionString("DBConnection"); // Stelle sicher, dass du einen Verbindungsstring in deiner appsettings.json hast
             builder.Services.AddDbContext<SkiServiceContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 

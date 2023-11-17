@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\11-skiservice\" />
+    <Folder Include="wwwroot\api\" />
   </ItemGroup>
 
 </Project>
