@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const ordersContainer = document.getElementById("ordersContainer");
+    const priorityFilterDropdown = document.getElementById("priorityFilter");
 
     // Funktion zum Generieren der Auftragskarten
     function displayOrders(orders) {
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             orderCard.innerHTML = `
                 <div class="flex flex-col">
                   <h3 class="text-xl font-semibold mb-2">Auftrag ${order.orderID}</h3>
+                  <h4 class="text-lg mb-2"><span class="font-bold">Status:</span> ${order.status}</h4>
                   <p class="font-bold">Kundeninformationen:</p>
                   <p>Kunde: ${order.customerName}</p>
                   <p>E-Mail: ${order.customerEmail}</p>
@@ -73,6 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Fetch Orders
     window.fetchOrders = async function fetchOrders() {
+        let url = "https://localhost:7214/api/service";
+        const selectedPriority = priorityFilterDropdown.value;
+
+        // Hinzufügen des Filters zur URL, falls nicht "Alle" ausgewählt ist
+        if (selectedPriority !== "Alle") {
+            url += `/priority/${selectedPriority}`;
+        }
+
         try {
             const response = await fetch("https://localhost:7214/api/service", {
                 method: "GET",
@@ -96,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(orders)
                 displayOrders(orders);
             } else {
-                alert('Keine Serviceaufträge vorhanden.');
+                alert('Keine Serviceaufträge vorhanden oder keine mit der ausgewählten Priorität.');
             }
         } catch (error) {
             console.error('Fehler beim Abrufen der Aufträge:', error);
