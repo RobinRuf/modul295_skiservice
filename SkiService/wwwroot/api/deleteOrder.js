@@ -12,8 +12,8 @@ window.deleteOrder = async function deleteOrder(orderId) {
     }
   
     try {
-      const response = await fetch(`https://localhost:7214/api/service/${orderId}`, {
-        method: 'DELETE',
+      const response = await fetch(`https://localhost:7214/api/service/delete/${orderId}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
