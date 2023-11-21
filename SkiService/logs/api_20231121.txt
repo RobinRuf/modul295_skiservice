@@ -996,3 +996,59 @@ SELECT ROW_COUNT();
 2023-11-21 19:43:32.946 +01:00 [INF] Executed action SkiService.Controllers.ServiceController.AssignOrderToEmployee (SkiService) in 139.5638ms
 2023-11-21 19:43:32.947 +01:00 [INF] Executed endpoint 'SkiService.Controllers.ServiceController.AssignOrderToEmployee (SkiService)'
 2023-11-21 19:43:32.947 +01:00 [INF] Request finished HTTP/1.1 PATCH https://localhost:7214/api/Service/assign/1 application/json 33 - 200 0 - 162.1096ms
+2023-11-21 20:45:10.841 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 20:45:11.160 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 20:45:11.161 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 20:45:11.162 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 20:45:11.163 +01:00 [INF] Hosting environment: Development
+2023-11-21 20:45:11.163 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 20:45:12.063 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 20:45:12.377 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 315.8999ms
+2023-11-21 20:45:12.382 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 20:45:12.387 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 20:45:12.408 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 26.1466ms
+2023-11-21 20:45:12.431 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.4475ms
+2023-11-21 20:45:12.570 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 20:45:12.804 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 234.3724ms
+2023-11-21 20:45:40.729 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/api/Service - -
+2023-11-21 20:45:41.101 +01:00 [INF] Executing endpoint 'SkiService.Controllers.ServiceController.GetServiceOrders (SkiService)'
+2023-11-21 20:45:41.186 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "Service"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SkiService.Models.dto.GetServiceOrderDto]]] GetServiceOrders() on controller SkiService.Controllers.ServiceController (SkiService).
+2023-11-21 20:45:42.099 +01:00 [INF] Executing action method SkiService.Controllers.ServiceController.GetServiceOrders (SkiService) - Validation state: "Valid"
+2023-11-21 20:45:44.654 +01:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`OrderID`, COALESCE(`e`.`Name`, 'N/A') AS `EmployeeName`, `c`.`Name` AS `CustomerName`, `c`.`Email` AS `CustomerEmail`, `c`.`Phone` AS `CustomerPhone`, `s0`.`ServiceType`, `p`.`Priority`, `s1`.`Status`, `s`.`CreationDate`, `s`.`StartDate`, `s`.`CompletionDate`, COALESCE(`s`.`Comment`, 'Kein Kommentar') AS `Comment`, `s`.`Sum`
+FROM `ServiceOrders` AS `s`
+LEFT JOIN `Employees` AS `e` ON `s`.`EmployeeID` = `e`.`ID`
+INNER JOIN `Customers` AS `c` ON `s`.`CustomerID` = `c`.`ID`
+LEFT JOIN `Services` AS `s0` ON `s`.`ServiceType` = `s0`.`ID`
+LEFT JOIN `Priorities` AS `p` ON `s`.`Priority` = `p`.`ID`
+LEFT JOIN `Statuses` AS `s1` ON `s`.`Status` = `s1`.`ID`
+2023-11-21 20:45:44.701 +01:00 [INF] Erfolgreich alle Aufträge erhalten.
+2023-11-21 20:45:44.710 +01:00 [INF] Executed action method SkiService.Controllers.ServiceController.GetServiceOrders (SkiService), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2601.5073ms.
+2023-11-21 20:45:44.728 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SkiService.Models.dto.GetServiceOrderDto, SkiService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-21 20:45:44.776 +01:00 [INF] Executed action SkiService.Controllers.ServiceController.GetServiceOrders (SkiService) in 3582.1408ms
+2023-11-21 20:45:44.777 +01:00 [INF] Executed endpoint 'SkiService.Controllers.ServiceController.GetServiceOrders (SkiService)'
+2023-11-21 20:45:44.794 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/api/Service - - - 200 - application/json;+charset=utf-8 4065.3969ms
+2023-11-21 20:45:56.278 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/api/Service/priority/tief - -
+2023-11-21 20:45:56.285 +01:00 [INF] Executing endpoint 'SkiService.Controllers.ServiceController.GetServiceOrdersByPriority (SkiService)'
+2023-11-21 20:45:56.319 +01:00 [INF] Route matched with {action = "GetServiceOrdersByPriority", controller = "Service"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SkiService.Models.dto.GetServiceOrderDto]]] GetServiceOrdersByPriority(System.String) on controller SkiService.Controllers.ServiceController (SkiService).
+2023-11-21 20:45:56.422 +01:00 [INF] Executing action method SkiService.Controllers.ServiceController.GetServiceOrdersByPriority (SkiService) - Validation state: "Valid"
+2023-11-21 20:45:56.705 +01:00 [INF] Executed DbCommand (116ms) [Parameters=[@__priority_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`ID`, `p`.`Priority`
+FROM `Priorities` AS `p`
+WHERE `p`.`Priority` = @__priority_0
+LIMIT 2
+2023-11-21 20:45:56.955 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@__priorityRecord_ID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`OrderID`, `s`.`Comment`, `s`.`CompletionDate`, `s`.`CreationDate`, `s`.`CustomerID`, `s`.`EmployeeID`, `s`.`Priority`, `s`.`ServiceType`, `s`.`StartDate`, `s`.`Status`, `s`.`Sum`, `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`, `c`.`ID`, `c`.`Email`, `c`.`Name`, `c`.`Phone`, `p`.`ID`, `p`.`Priority`, `s0`.`ID`, `s0`.`Status`, `s1`.`ID`, `s1`.`ServiceType`
+FROM `ServiceOrders` AS `s`
+LEFT JOIN `Employees` AS `e` ON `s`.`EmployeeID` = `e`.`ID`
+INNER JOIN `Customers` AS `c` ON `s`.`CustomerID` = `c`.`ID`
+LEFT JOIN `Priorities` AS `p` ON `s`.`Priority` = `p`.`ID`
+LEFT JOIN `Statuses` AS `s0` ON `s`.`Status` = `s0`.`ID`
+LEFT JOIN `Services` AS `s1` ON `s`.`ServiceType` = `s1`.`ID`
+WHERE `s`.`Priority` = @__priorityRecord_ID_0
+2023-11-21 20:45:57.150 +01:00 [INF] Erfolgreich die gewünschten Aufträge erhalten.
+2023-11-21 20:45:57.151 +01:00 [INF] Executed action method SkiService.Controllers.ServiceController.GetServiceOrdersByPriority (SkiService), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 728.1752ms.
+2023-11-21 20:45:57.152 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SkiService.Models.dto.GetServiceOrderDto, SkiService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-21 20:45:57.153 +01:00 [INF] Executed action SkiService.Controllers.ServiceController.GetServiceOrdersByPriority (SkiService) in 833.8131ms
+2023-11-21 20:45:57.154 +01:00 [INF] Executed endpoint 'SkiService.Controllers.ServiceController.GetServiceOrdersByPriority (SkiService)'
+2023-11-21 20:45:57.156 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/api/Service/priority/tief - - - 200 - application/json;+charset=utf-8 877.1664ms
