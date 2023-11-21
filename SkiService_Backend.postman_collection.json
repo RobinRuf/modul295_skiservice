@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "e8fbdc98-e18b-429a-8935-89cbac62b6a4",
+		"name": "SkiService_Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29157825"
+	},
+	"item": [
+		{
+			"name": "Employee-Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"employee1\",\r\n  \"password\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7214/api/Auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7214",
+					"path": [
+						"api",
+						"Auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create-ServiceOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerName\": \"Franz Meier\",\r\n  \"customerEmail\": \"franz.meier@gmail.com\",\r\n  \"customerPhone\": \"0772673612\",\r\n  \"serviceType\": \"Rennski Service\",\r\n  \"priority\": \"Tief\",\r\n  \"startDate\": \"2023-11-21T17:56:06.773Z\",\r\n  \"endDate\": \"2023-11-21T17:56:06.773Z\",\r\n  \"sum\": \"CHF 99.-\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7214/api/Service",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7214",
+					"path": [
+						"api",
+						"Service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-All-ServiceOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7214/api/Service",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7214",
+					"path": [
+						"api",
+						"Service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-ServiceOrders-Filtered-By-Priority",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7214/api/Service/priority/standard",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7214",
+					"path": [
+						"api",
+						"Service",
+						"priority",
+						"standard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-ServiceOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlbXBsb3llZTEiLCJuYmYiOjE3MDA1OTA4MzQsImV4cCI6MTcwMDY3NzIzNCwiaWF0IjoxNzAwNTkwODM0fQ.oq2Kb4-wPVDrh3FfoVjS-NDTEyfP4bNWi7KvqUc7gsa3mygSMY-eB9zy2-tFkr3JWP1DNBZzo6PCtwh_MGItbQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7214/api/Service/delete/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7214",
+					"path": [
+						"api",
+						"Service",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlbXBsb3llZTEiLCJuYmYiOjE3MDA1OTA4MzQsImV4cCI6MTcwMDY3NzIzNCwiaWF0IjoxNzAwNTkwODM0fQ.oq2Kb4-wPVDrh3FfoVjS-NDTEyfP4bNWi7KvqUc7gsa3mygSMY-eB9zy2-tFkr3JWP1DNBZzo6PCtwh_MGItbQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"Abgeschlossen\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7214/api/Service/update/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7214",
+					"path": [
+						"api",
+						"Service",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign-Employee-To-ServiceOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlbXBsb3llZTEiLCJuYmYiOjE3MDA1OTA4MzQsImV4cCI6MTcwMDY3NzIzNCwiaWF0IjoxNzAwNTkwODM0fQ.oq2Kb4-wPVDrh3FfoVjS-NDTEyfP4bNWi7KvqUc7gsa3mygSMY-eB9zy2-tFkr3JWP1DNBZzo6PCtwh_MGItbQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"employee1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7214/api/Service/assign/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7214",
+					"path": [
+						"api",
+						"Service",
+						"assign",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
