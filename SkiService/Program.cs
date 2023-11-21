@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using SkiService.Models;
 using SkiService.Services;
 using System.Text;
+using Serilog;
 
 namespace SkiService
 {
@@ -13,7 +14,15 @@ namespace SkiService
     {
         public static void Main(string[] args)
         {
+            // Serilog Config
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.File("logs/api_.txt", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Logging.ClearProviders();
+            builder.Logging.AddSerilog();
 
             // Add Token Service
             builder.Services.AddScoped<ITokenService, TokenService>();

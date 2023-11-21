@@ -12,11 +12,13 @@ namespace SkiService.Controllers
     {
         private readonly SkiServiceContext _context;
         private readonly ITokenService _tokenService;
+        private readonly ILogger<AuthController> _logger;
 
-        public AuthController(SkiServiceContext context, ITokenService tokenService)
+        public AuthController(SkiServiceContext context, ITokenService tokenService, ILogger<AuthController> logger)
         {
             _context = context;
             _tokenService = tokenService;
+            _logger = logger;
         }
 
         [HttpPost("login")]
@@ -26,6 +28,7 @@ namespace SkiService.Controllers
 
             if (user == null)
             {
+                _logger.LogError("Benutzer wurde nicht gefunden. Ist er in der DB in der employees-Tabelle?");
                 return Unauthorized("Benutzer nicht gefunden.");
             }
 
@@ -33,6 +36,7 @@ namespace SkiService.Controllers
             var hashedPassword = HashingHelper.ConvertToSha256(loginDto.Password);
             if (hashedPassword != user.Password)
             {
+                _logger.LogError("Falsches Password.");
                 return Unauthorized("Falsches Passwort.");
             }
 
