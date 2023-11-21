@@ -22,6 +22,8 @@ namespace SkiService.Controllers
         }
 
         [HttpPost("login")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<string> Login([FromBody] LoginDto loginDto)
         {
             var user = _context.Employees.FirstOrDefault(u => u.Username == loginDto.Username);

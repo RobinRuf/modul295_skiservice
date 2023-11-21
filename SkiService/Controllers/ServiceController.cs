@@ -111,6 +111,7 @@ namespace SkiService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<GetServiceOrderDto>>> GetServiceOrders()
         {
             var serviceOrders = await _context.ServiceOrders
@@ -147,6 +148,8 @@ namespace SkiService.Controllers
         /// <param name="priority"></param>
         /// <returns></returns>
         [HttpGet("priority/{priority}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<GetServiceOrderDto>>> GetServiceOrdersByPriority(string priority)
         {
             List<ServiceOrderModel> serviceOrders;
@@ -214,6 +217,8 @@ namespace SkiService.Controllers
         /// <returns></returns>
         [HttpPatch("delete/{orderId}")]
         [Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> SetServiceOrderStatusToDelete(int orderId)
         {
             var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
@@ -249,6 +254,9 @@ namespace SkiService.Controllers
         /// <returns></returns>
         [HttpPatch("update/{orderId}")]
         [Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateServiceOrderStatus(int orderId, [FromBody] UpdateStatusDto updateStatusDto)
         {
             var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
@@ -286,6 +294,8 @@ namespace SkiService.Controllers
         /// <returns></returns>
         [HttpPatch("assign/{orderId}")]
         [Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> AssignOrderToEmployee(int orderId, [FromBody] AssignOrderDto assignOrderDto)
         {
             var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
