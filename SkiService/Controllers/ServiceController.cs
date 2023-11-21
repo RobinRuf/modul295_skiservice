@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using SkiService.Models;
 using SkiService.Models.dto;
 
@@ -12,10 +13,12 @@ namespace SkiService.Controllers
     public class ServiceController : ControllerBase
     {
         private readonly SkiServiceContext _context;
+        private readonly ILogger<ServiceController> _logger;
 
-        public ServiceController(SkiServiceContext context)
+        public ServiceController(SkiServiceContext context, ILogger<ServiceController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         /// <summary>
@@ -30,6 +33,7 @@ namespace SkiService.Controllers
         {
             if (!ModelState.IsValid)
             {
+                _logger.LogError("BadRequest Error");
                 return BadRequest(ModelState);
             }
 
@@ -53,6 +57,7 @@ namespace SkiService.Controllers
                 };
                 _context.Customers.Add(customer);
                 await _context.SaveChangesAsync();
+                _logger.LogInformation($"Kunde {customerDto.Name} erfolgreich erstellt.");
             }
 
 
@@ -75,6 +80,7 @@ namespace SkiService.Controllers
             // Check if Priority or ServiceType are null (should not be)
             if (priority == null || serviceType == null)
             {
+                _logger.LogError("BadRequest Error: Priority oder ServiceType ist ungültig.");
                 return BadRequest("Ungültige Priority oder ServiceType.");
             }
 
@@ -92,6 +98,7 @@ namespace SkiService.Controllers
 
             _context.ServiceOrders.Add(serviceOrder);
             await _context.SaveChangesAsync();
+            _logger.LogInformation("Ein Auftrag wurde erfolgreich erstellt.");
 
             return StatusCode(StatusCodes.Status201Created);
         }
@@ -130,6 +137,7 @@ namespace SkiService.Controllers
                 })
                 .ToListAsync();
 
+            _logger.LogInformation("Erfolgreich alle Aufträge erhalten.");
             return Ok(serviceOrders);
         }
 
@@ -160,6 +168,7 @@ namespace SkiService.Controllers
 
                 if (priorityRecord == null)
                 {
+                    _logger.LogError("Keine Aufträge mit der angegebenen Priorität gefunden.");
                     return NotFound($"Keine Aufträge mit der Priorität '{priority}' gefunden.");
                 }
 
@@ -190,6 +199,7 @@ namespace SkiService.Controllers
                 Sum = so.Sum
             }).ToList();
 
+            _logger.LogInformation("Erfolgreich die gewünschten Aufträge erhalten.");
             return Ok(serviceOrderDtos);
         }
 
@@ -210,6 +220,7 @@ namespace SkiService.Controllers
 
             if (serviceOrder == null)
             {
+                _logger.LogError("Der Serviceauftrag wurde nicht gefunden und konnte somit auch nicht gelöscht werden.");
                 return NotFound();
             }
 
@@ -219,11 +230,13 @@ namespace SkiService.Controllers
 
             if (status == null)
             {
+                _logger.LogCritical("Der Status 'Gelöscht' existiert in der DB-Tabelle 'statuses' nicht. Bitte überprüfen.");
                 return BadRequest("Der Status 'Gelöscht' existiert nicht.");
             }
 
             serviceOrder.Status = status.ID;
             await _context.SaveChangesAsync();
+            _logger.LogInformation($"Erfolgreich den Status des Auftrags mit der ID {orderId} auf 'Gelöscht' aktualisiert.");
 
             return Ok();
         }
@@ -241,6 +254,7 @@ namespace SkiService.Controllers
             var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
             if (serviceOrder == null)
             {
+                _logger.LogError("Der Serviceauftrag konnte nicht gefunden und somit auch der Status nicht aktualisiert werden.");
                 return NotFound();
             }
 
@@ -251,6 +265,7 @@ namespace SkiService.Controllers
 
             if (status == null)
             {
+                _logger.LogCritical("Der gewünschte Status existiert in der DB-Tabelle 'statuses' nicht. Bitte überprüfen.");
                 return BadRequest("Der angeforderte Status existiert nicht.");
             }
 
@@ -258,6 +273,7 @@ namespace SkiService.Controllers
             serviceOrder.Status = status.ID;
             _context.ServiceOrders.Update(serviceOrder);
             await _context.SaveChangesAsync();
+            _logger.LogInformation($"Erfolgreich den Status des Auftrags mit der ID {orderId} aktualisiert.");
 
             return Ok();
         }
@@ -275,6 +291,7 @@ namespace SkiService.Controllers
             var serviceOrder = await _context.ServiceOrders.FindAsync(orderId);
             if (serviceOrder == null)
             {
+                _logger.LogError("Der Serviceauftrag konnte nicht gefunden und der Mitarbeiter somit auch nicht zugewiesen werden.");
                 return NotFound("Serviceauftrag nicht gefunden.");
             }
 
@@ -282,6 +299,7 @@ namespace SkiService.Controllers
             var employee = await _context.Employees.FirstOrDefaultAsync(e => e.Username == assignOrderDto.Username);
             if (employee == null)
             {
+                _logger.LogCritical("Der Mitarbeiter konnte in der DB-Tabelle 'employees' nicht gefunden werden. Bitte überprüfen.");
                 return NotFound("Mitarbeiter nicht gefunden.");
             }
 
@@ -289,6 +307,7 @@ namespace SkiService.Controllers
             serviceOrder.EmployeeID = employee.ID;
             _context.ServiceOrders.Update(serviceOrder);
             await _context.SaveChangesAsync();
+            _logger.LogInformation($"Erfolgreich den Mitarbeiter {employee.Name} dem Auftrag ");
 
             return Ok();
         }

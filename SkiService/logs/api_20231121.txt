@@ -1,0 +1,32 @@
+2023-11-21 18:06:33.821 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 18:06:34.033 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 18:06:34.034 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 18:06:34.035 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 18:06:34.035 +01:00 [INF] Hosting environment: Development
+2023-11-21 18:06:34.035 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 18:06:34.766 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:06:34.979 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:06:34.983 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:06:35.000 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 234.8603ms
+2023-11-21 18:06:35.027 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 48.6621ms
+2023-11-21 18:06:35.042 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 60.5240ms
+2023-11-21 18:06:35.081 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:06:35.202 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.6516ms
+2023-11-21 18:06:43.103 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/api/Service - -
+2023-11-21 18:06:43.260 +01:00 [INF] Executing endpoint 'SkiService.Controllers.ServiceController.GetServiceOrders (SkiService)'
+2023-11-21 18:06:43.306 +01:00 [INF] Route matched with {action = "GetServiceOrders", controller = "Service"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SkiService.Models.dto.GetServiceOrderDto]]] GetServiceOrders() on controller SkiService.Controllers.ServiceController (SkiService).
+2023-11-21 18:06:43.729 +01:00 [INF] Executing action method SkiService.Controllers.ServiceController.GetServiceOrders (SkiService) - Validation state: "Valid"
+2023-11-21 18:06:44.875 +01:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `s`.`OrderID`, COALESCE(`e`.`Name`, 'N/A') AS `EmployeeName`, `c`.`Name` AS `CustomerName`, `c`.`Email` AS `CustomerEmail`, `c`.`Phone` AS `CustomerPhone`, `s0`.`ServiceType`, `p`.`Priority`, `s1`.`Status`, `s`.`CreationDate`, `s`.`StartDate`, `s`.`CompletionDate`, COALESCE(`s`.`Comment`, 'Kein Kommentar') AS `Comment`, `s`.`Sum`
+FROM `ServiceOrders` AS `s`
+LEFT JOIN `Employees` AS `e` ON `s`.`EmployeeID` = `e`.`ID`
+INNER JOIN `Customers` AS `c` ON `s`.`CustomerID` = `c`.`ID`
+LEFT JOIN `Services` AS `s0` ON `s`.`ServiceType` = `s0`.`ID`
+LEFT JOIN `Priorities` AS `p` ON `s`.`Priority` = `p`.`ID`
+LEFT JOIN `Statuses` AS `s1` ON `s`.`Status` = `s1`.`ID`
+2023-11-21 18:06:44.902 +01:00 [INF] Erfolgreich alle Aufträge erhalten.
+2023-11-21 18:06:44.910 +01:00 [INF] Executed action method SkiService.Controllers.ServiceController.GetServiceOrders (SkiService), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1173.4225ms.
+2023-11-21 18:06:44.921 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SkiService.Models.dto.GetServiceOrderDto, SkiService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-21 18:06:44.949 +01:00 [INF] Executed action SkiService.Controllers.ServiceController.GetServiceOrders (SkiService) in 1639.6671ms
+2023-11-21 18:06:44.950 +01:00 [INF] Executed endpoint 'SkiService.Controllers.ServiceController.GetServiceOrders (SkiService)'
+2023-11-21 18:06:44.957 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/api/Service - - - 200 - application/json;+charset=utf-8 1854.1199ms
