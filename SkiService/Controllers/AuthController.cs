@@ -32,13 +32,34 @@ namespace SkiService.Controllers
                 return Unauthorized("Benutzer nicht gefunden.");
             }
 
-            // Hash the input password and compare
+            // Check if account is locked
+            if (user.IsLocked)
+            {
+                _logger.LogError("Konto gesperrt aufgrund zu vieler Fehlanmeldeversuche.");
+                return Unauthorized("Konto gesperrt.");
+            }
+
             var hashedPassword = HashingHelper.ConvertToSha256(loginDto.Password);
+
             if (hashedPassword != user.Password)
             {
-                _logger.LogError("Falsches Password.");
+                user.LoginAttempts += 1;
+
+                // Lock account after 3 failed attempts
+                if (user.LoginAttempts >= 3)
+                {
+                    user.IsLocked = true;
+                    _logger.LogError("Konto wurde gesperrt aufgrund zu vieler Fehlanmeldeversuche.");
+                }
+
+                _context.SaveChanges();
+                _logger.LogError("Falsches Passwort.");
                 return Unauthorized("Falsches Passwort.");
             }
+
+            // Reset login attempts after successful login
+            user.LoginAttempts = 0;
+            _context.SaveChanges();
 
             string token = _tokenService.CreateToken(user.Username);
             return Ok(token);

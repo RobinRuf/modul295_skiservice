@@ -30,3 +30,312 @@ LEFT JOIN `Statuses` AS `s1` ON `s`.`Status` = `s1`.`ID`
 2023-11-21 18:06:44.949 +01:00 [INF] Executed action SkiService.Controllers.ServiceController.GetServiceOrders (SkiService) in 1639.6671ms
 2023-11-21 18:06:44.950 +01:00 [INF] Executed endpoint 'SkiService.Controllers.ServiceController.GetServiceOrders (SkiService)'
 2023-11-21 18:06:44.957 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/api/Service - - - 200 - application/json;+charset=utf-8 1854.1199ms
+2023-11-21 18:27:39.112 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 18:27:39.300 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 18:27:39.300 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 18:27:39.302 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 18:27:39.302 +01:00 [INF] Hosting environment: Development
+2023-11-21 18:27:39.302 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 18:27:40.025 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:27:40.231 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 206.8177ms
+2023-11-21 18:27:40.236 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:27:40.236 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:27:40.265 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 26.6221ms
+2023-11-21 18:27:40.286 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 49.4735ms
+2023-11-21 18:27:40.320 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:27:40.387 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Auth/login" for actions - SkiService.Controllers.AuthController.Login (SkiService),SkiService.Controllers.AuthController.Login (SkiService). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-11-21 18:27:40.491 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 171.5829ms
+2023-11-21 18:27:45.582 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:27:45.595 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 12.7436ms
+2023-11-21 18:27:45.600 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:27:45.600 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:27:45.602 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 1.9012ms
+2023-11-21 18:27:45.628 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.1914ms
+2023-11-21 18:27:45.655 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:27:45.657 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Auth/login" for actions - SkiService.Controllers.AuthController.Login (SkiService),SkiService.Controllers.AuthController.Login (SkiService). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-11-21 18:27:45.659 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 3.4733ms
+2023-11-21 18:28:02.890 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 18:28:03.100 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 18:28:03.101 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 18:28:03.102 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 18:28:03.103 +01:00 [INF] Hosting environment: Development
+2023-11-21 18:28:03.103 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 18:28:03.803 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:28:04.033 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 232.2572ms
+2023-11-21 18:28:04.052 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:28:04.052 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:28:04.077 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 24.9009ms
+2023-11-21 18:28:04.086 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 33.5404ms
+2023-11-21 18:28:04.213 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:28:04.343 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 129.7403ms
+2023-11-21 18:28:17.426 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 18:28:17.644 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 18:28:17.644 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 18:28:17.647 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 18:28:17.648 +01:00 [INF] Hosting environment: Development
+2023-11-21 18:28:17.648 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 18:28:17.958 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:28:18.153 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 197.1731ms
+2023-11-21 18:28:18.162 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:28:18.162 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:28:18.179 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 16.6721ms
+2023-11-21 18:28:18.193 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.6333ms
+2023-11-21 18:28:18.238 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:28:18.291 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Auth/login" for actions - SkiService.Controllers.AuthController.Login (SkiService),SkiService.Controllers.AuthController.Login (SkiService). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-11-21 18:28:18.324 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 85.8480ms
+2023-11-21 18:30:04.965 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 18:30:05.166 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 18:30:05.177 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 18:30:05.179 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 18:30:05.180 +01:00 [INF] Hosting environment: Development
+2023-11-21 18:30:05.180 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 18:30:05.671 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:30:05.870 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 200.0071ms
+2023-11-21 18:30:05.876 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:30:05.876 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:30:05.889 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 13.0293ms
+2023-11-21 18:30:05.901 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.1879ms
+2023-11-21 18:30:05.936 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:30:06.045 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 109.3556ms
+2023-11-21 18:30:20.941 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54
+2023-11-21 18:30:20.967 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:30:21.073 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:30:21.109 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:30:21.541 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:30:22.553 +01:00 [INF] Executed DbCommand (44ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:30:22.744 +01:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Employees` SET `LoginAttempts` = @p0
+WHERE `ID` = @p1;
+SELECT ROW_COUNT();
+2023-11-21 18:30:22.865 +01:00 [ERR] An exception occurred in the database while saving changes for context type 'SkiService.Models.SkiServiceContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): UPDATE command denied to user 'api'@'localhost' for table 'employees'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): UPDATE command denied to user 'api'@'localhost' for table 'employees'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-11-21 18:31:42.020 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 18:31:42.277 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 18:31:42.277 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 18:31:42.279 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 18:31:42.279 +01:00 [INF] Hosting environment: Development
+2023-11-21 18:31:42.279 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 18:31:43.032 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:31:43.296 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 265.8270ms
+2023-11-21 18:31:43.303 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:31:43.303 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:31:43.309 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 5.9881ms
+2023-11-21 18:31:43.321 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.8493ms
+2023-11-21 18:31:43.361 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:31:43.483 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 122.0334ms
+2023-11-21 18:31:54.725 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54
+2023-11-21 18:31:54.754 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:31:54.871 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:31:54.904 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:31:55.291 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:31:56.332 +01:00 [INF] Executed DbCommand (54ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:31:56.495 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Employees` SET `LoginAttempts` = @p0
+WHERE `ID` = @p1;
+SELECT ROW_COUNT();
+2023-11-21 18:31:56.501 +01:00 [ERR] Falsches Passwort.
+2023-11-21 18:31:56.506 +01:00 [INF] Executed action method SkiService.Controllers.AuthController.Login (SkiService), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 1209.6199ms.
+2023-11-21 18:31:56.514 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-11-21 18:31:56.522 +01:00 [INF] Executed action SkiService.Controllers.AuthController.Login (SkiService) in 1612.7206ms
+2023-11-21 18:31:56.522 +01:00 [INF] Executed endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:31:56.535 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54 - 401 - text/plain;+charset=utf-8 1810.2105ms
+2023-11-21 18:32:09.577 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54
+2023-11-21 18:32:09.581 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:32:09.583 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:09.583 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:32:09.616 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:32:09.633 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:32:09.640 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Employees` SET `LoginAttempts` = @p0
+WHERE `ID` = @p1;
+SELECT ROW_COUNT();
+2023-11-21 18:32:09.640 +01:00 [ERR] Falsches Passwort.
+2023-11-21 18:32:09.640 +01:00 [INF] Executed action method SkiService.Controllers.AuthController.Login (SkiService), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 24.2236ms.
+2023-11-21 18:32:09.641 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-11-21 18:32:09.641 +01:00 [INF] Executed action SkiService.Controllers.AuthController.Login (SkiService) in 57.9384ms
+2023-11-21 18:32:09.641 +01:00 [INF] Executed endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:09.641 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54 - 401 - text/plain;+charset=utf-8 64.6063ms
+2023-11-21 18:32:22.490 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54
+2023-11-21 18:32:22.493 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:32:22.497 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:22.497 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:32:22.516 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:32:22.581 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:32:22.581 +01:00 [ERR] Konto wurde gesperrt aufgrund zu vieler Fehlanmeldeversuche.
+2023-11-21 18:32:22.584 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Employees` SET `IsLocked` = @p0, `LoginAttempts` = @p1
+WHERE `ID` = @p2;
+SELECT ROW_COUNT();
+2023-11-21 18:32:22.584 +01:00 [ERR] Falsches Passwort.
+2023-11-21 18:32:22.584 +01:00 [INF] Executed action method SkiService.Controllers.AuthController.Login (SkiService), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 68.0807ms.
+2023-11-21 18:32:22.585 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-11-21 18:32:22.585 +01:00 [INF] Executed action SkiService.Controllers.AuthController.Login (SkiService) in 87.7295ms
+2023-11-21 18:32:22.585 +01:00 [INF] Executed endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:22.585 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54 - 401 - text/plain;+charset=utf-8 95.2245ms
+2023-11-21 18:32:39.832 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54
+2023-11-21 18:32:39.832 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:32:39.834 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:39.834 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:32:39.850 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:32:39.853 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:32:39.853 +01:00 [ERR] Konto gesperrt aufgrund zu vieler Fehlanmeldeversuche.
+2023-11-21 18:32:39.853 +01:00 [INF] Executed action method SkiService.Controllers.AuthController.Login (SkiService), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 3.3025ms.
+2023-11-21 18:32:39.853 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-11-21 18:32:39.853 +01:00 [INF] Executed action SkiService.Controllers.AuthController.Login (SkiService) in 19.5858ms
+2023-11-21 18:32:39.853 +01:00 [INF] Executed endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:39.854 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54 - 401 - text/plain;+charset=utf-8 21.6780ms
+2023-11-21 18:32:48.096 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 55
+2023-11-21 18:32:48.096 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:32:48.097 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:48.110 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:32:48.141 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:32:48.144 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:32:48.144 +01:00 [ERR] Benutzer wurde nicht gefunden. Ist er in der DB in der employees-Tabelle?
+2023-11-21 18:32:48.145 +01:00 [INF] Executed action method SkiService.Controllers.AuthController.Login (SkiService), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 3.0169ms.
+2023-11-21 18:32:48.145 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-11-21 18:32:48.145 +01:00 [INF] Executed action SkiService.Controllers.AuthController.Login (SkiService) in 34.7133ms
+2023-11-21 18:32:48.145 +01:00 [INF] Executed endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:32:48.145 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7214/api/Auth/login application/json 55 - 401 - text/plain;+charset=utf-8 50.2142ms
+2023-11-21 18:33:25.903 +01:00 [INF] User profile is available. Using 'C:\Users\robin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-21 18:33:26.175 +01:00 [INF] Now listening on: https://localhost:7214
+2023-11-21 18:33:26.176 +01:00 [INF] Now listening on: http://localhost:5271
+2023-11-21 18:33:26.178 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-21 18:33:26.187 +01:00 [INF] Hosting environment: Development
+2023-11-21 18:33:26.187 +01:00 [INF] Content root path: C:\GitHub\Modul295\SkiServiceProject\SkiService
+2023-11-21 18:33:26.574 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/index.html - -
+2023-11-21 18:33:26.878 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/index.html - - - 200 - text/html;charset=utf-8 307.7961ms
+2023-11-21 18:33:26.889 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - -
+2023-11-21 18:33:26.889 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/_vs/browserLink - -
+2023-11-21 18:33:26.909 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_framework/aspnetcore-browser-refresh.js - - - 200 12352 application/javascript;+charset=utf-8 19.7215ms
+2023-11-21 18:33:26.927 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.9574ms
+2023-11-21 18:33:27.016 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - -
+2023-11-21 18:33:27.135 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7214/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 119.3838ms
+2023-11-21 18:33:44.317 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54
+2023-11-21 18:33:44.349 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:33:44.467 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:33:44.495 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:33:44.867 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:33:45.929 +01:00 [INF] Executed DbCommand (49ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:33:46.080 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Employees` SET `LoginAttempts` = @p0
+WHERE `ID` = @p1;
+SELECT ROW_COUNT();
+2023-11-21 18:33:46.086 +01:00 [ERR] Falsches Passwort.
+2023-11-21 18:33:46.091 +01:00 [INF] Executed action method SkiService.Controllers.AuthController.Login (SkiService), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 1217.3092ms.
+2023-11-21 18:33:46.099 +01:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2023-11-21 18:33:46.103 +01:00 [INF] Executed action SkiService.Controllers.AuthController.Login (SkiService) in 1604.3135ms
+2023-11-21 18:33:46.104 +01:00 [INF] Executed endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:33:46.113 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7214/api/Auth/login application/json 54 - 401 - text/plain;+charset=utf-8 1796.3363ms
+2023-11-21 18:33:58.322 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7214/api/Auth/login application/json 55
+2023-11-21 18:33:58.324 +01:00 [INF] CORS policy execution successful.
+2023-11-21 18:33:58.327 +01:00 [INF] Executing endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:33:58.329 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.String] Login(SkiService.Models.dto.LoginDto) on controller SkiService.Controllers.AuthController (SkiService).
+2023-11-21 18:33:58.360 +01:00 [INF] Executing action method SkiService.Controllers.AuthController.Login (SkiService) - Validation state: "Valid"
+2023-11-21 18:33:58.378 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__loginDto_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `e`.`ID`, `e`.`IsLocked`, `e`.`LoginAttempts`, `e`.`Name`, `e`.`Password`, `e`.`Username`
+FROM `Employees` AS `e`
+WHERE `e`.`Username` = @__loginDto_Username_0
+LIMIT 1
+2023-11-21 18:33:58.384 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Employees` SET `LoginAttempts` = @p0
+WHERE `ID` = @p1;
+SELECT ROW_COUNT();
+2023-11-21 18:33:58.451 +01:00 [INF] Executed action method SkiService.Controllers.AuthController.Login (SkiService), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 90.8204ms.
+2023-11-21 18:33:58.452 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-11-21 18:33:58.452 +01:00 [INF] Executed action SkiService.Controllers.AuthController.Login (SkiService) in 123.2035ms
+2023-11-21 18:33:58.452 +01:00 [INF] Executed endpoint 'SkiService.Controllers.AuthController.Login (SkiService)'
+2023-11-21 18:33:58.453 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7214/api/Auth/login application/json 55 - 200 - text/plain;+charset=utf-8 131.3656ms
