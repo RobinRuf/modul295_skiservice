@@ -33,28 +33,46 @@ namespace SkiService.Controllers
                 return BadRequest(ModelState);
             }
 
+            var customerDto = new CreateCustomerDto
+            {
+                Name = serviceOrderDto.CustomerName,
+                Email = serviceOrderDto.CustomerEmail,
+                Phone = serviceOrderDto.CustomerPhone
+            };
+
             // Check und Create Customer
             var customer = await _context.Customers
-                .SingleOrDefaultAsync(c => c.Email == serviceOrderDto.CustomerEmail);
+                .SingleOrDefaultAsync(c => c.Email == customerDto.Email);
             if (customer == null)
             {
                 customer = new CustomerModel
                 {
-                    Name = serviceOrderDto.CustomerName,
-                    Email = serviceOrderDto.CustomerEmail,
-                    Phone = serviceOrderDto.CustomerPhone
+                    Name = customerDto.Name,
+                    Email = customerDto.Email,
+                    Phone = customerDto.Phone
                 };
                 _context.Customers.Add(customer);
                 await _context.SaveChangesAsync();
             }
 
-            // Find Priority and ServiceType by Name
-            var priority = await _context.Priorities
-                .SingleOrDefaultAsync(p => p.Priority == serviceOrderDto.Priority);
-            var serviceType = await _context.Services
-                .SingleOrDefaultAsync(s => s.ServiceType == serviceOrderDto.ServiceType);
 
-            // Überprüfungen für nicht gefundene Priority und ServiceType
+            // Find Priority and ServiceType by Name
+            var checkPriorityDto = new CheckPriorityDto
+            {
+                Priority = serviceOrderDto.Priority
+            };
+
+            var checkServiceTypeDto = new CheckServiceTypeDto
+            {
+                ServiceType = serviceOrderDto.ServiceType
+            };
+
+            var priority = await _context.Priorities
+                .SingleOrDefaultAsync(p => p.Priority == checkPriorityDto.Priority);
+            var serviceType = await _context.Services
+                .SingleOrDefaultAsync(s => s.ServiceType == checkServiceTypeDto.ServiceType);
+
+            // Check if Priority or ServiceType are null (should not be)
             if (priority == null || serviceType == null)
             {
                 return BadRequest("Ungültige Priority oder ServiceType.");
