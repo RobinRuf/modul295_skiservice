@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     
         let formData = {
-            CustomerName: document.getElementById('firstname').value + ' ' + document.getElementById('lastname').value,
-            CustomerEmail: document.getElementById('email').value,
-            CustomerPhone: document.getElementById('phone').value,
-            ServiceType: convertServiceType(document.getElementById('serviceDropdown').value),
-            Priority: document.querySelector('input[name="list-radio"]:checked').value,
-            Status: "Offen",
+            customerName: document.getElementById('firstname').value + ' ' + document.getElementById('lastname').value,
+            customerEmail: document.getElementById('email').value,
+            customerPhone: document.getElementById('phone').value,
+            serviceType: convertServiceType(document.getElementById('serviceDropdown').value),
+            priority: document.querySelector('input[name="list-radio"]:checked').value,
             startDate: convertToISO(document.getElementById('startDate').value),
             endDate: convertToISO(document.getElementById('endDate').value),
+            sum: document.getElementById('total').value,
         };
     
         // Create POST Request
@@ -27,15 +27,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
         // FETCH
         fetch('https://localhost:7214/api/service', requestOptions)
-            .then(response => response.json())
-            .then((json) => {
-                console.log(JSON.stringify(json));
+        .then(response => {
+            if (response.ok) {
                 window.location.href = "formconfirm.html";
-              })
-              .catch((error) => {
-                console.log("Es gab einen Fehler", error);
+            } else {
                 window.location.href = "formerror.html";
-              });
+            }
+        })
+        .catch((error) => {
+            console.log("Netzwerkfehler oder Problem beim Senden der Anfrage", error);
+            window.location.href = "formerror.html";
+        });
     });
 });
 

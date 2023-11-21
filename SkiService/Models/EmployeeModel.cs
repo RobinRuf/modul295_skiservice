@@ -1,14 +1,17 @@
-﻿namespace SkiService.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SkiService.Models
 {
-    public class Employee
+    public class EmployeeModel
     {
-        public int EmployeeID { get; set; }
+        [Key]
+        public int ID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
 
         // Navigation Property (every employee can be assigned to 0..* ServiceOrders)
-        public List<ServiceOrder> ServiceOrders { get; set; }
+        public List<ServiceOrderModel> ServiceOrders { get; set; }
     }
 
 }

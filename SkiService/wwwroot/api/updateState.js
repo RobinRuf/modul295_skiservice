@@ -16,7 +16,7 @@ window.updateState = async function updateState(orderId, currentStatus) {
     }
 
     try {
-        const response = await fetch(`https://localhost:7214/api/service/${orderId}`, {
+        const response = await fetch(`https://localhost:7214/api/service/update/${orderId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
