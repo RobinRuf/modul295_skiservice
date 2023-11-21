@@ -307,7 +307,7 @@ namespace SkiService.Controllers
             serviceOrder.EmployeeID = employee.ID;
             _context.ServiceOrders.Update(serviceOrder);
             await _context.SaveChangesAsync();
-            _logger.LogInformation($"Erfolgreich den Mitarbeiter {employee.Name} dem Auftrag ");
+            _logger.LogInformation($"Erfolgreich den Mitarbeiter {employee.Name} dem Auftrag {serviceOrder.OrderID} zugewiesen.");
 
             return Ok();
         }

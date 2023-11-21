@@ -9,7 +9,7 @@ async function setEmployee(orderId) {
         return;
     }
 
-    // Extrahieren des Benutzernamens aus dem Token
+    // Extract the username out of the token
     const payloadBase64 = token.split('.')[1];
     const decodedPayload = atob(payloadBase64);
     const payload = JSON.parse(decodedPayload);
