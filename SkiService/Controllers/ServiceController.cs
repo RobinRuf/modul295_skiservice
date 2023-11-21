@@ -134,6 +134,70 @@ namespace SkiService.Controllers
         }
 
         /// <summary>
+        /// Get all Service Orders filtered
+        /// </summary>
+        /// <param name="priority"></param>
+        /// <returns></returns>
+        [HttpGet("priority/{priority}")]
+        public async Task<ActionResult<IEnumerable<GetServiceOrderDto>>> GetServiceOrdersByPriority(string priority)
+        {
+            List<ServiceOrderModel> serviceOrders;
+
+            if (priority.ToLower() == "alle")
+            {
+                serviceOrders = await _context.ServiceOrders
+                    .Include(so => so.Employee)
+                    .Include(so => so.Customer)
+                    .Include(so => so.PriorityInfo)
+                    .Include(so => so.StatusInfo)
+                    .Include(so => so.Service)
+                    .ToListAsync();
+            }
+            else
+            {
+                var priorityRecord = await _context.Priorities
+                    .SingleOrDefaultAsync(p => p.Priority == priority);
+
+                if (priorityRecord == null)
+                {
+                    return NotFound($"Keine Aufträge mit der Priorität '{priority}' gefunden.");
+                }
+
+                serviceOrders = await _context.ServiceOrders
+                    .Where(so => so.Priority == priorityRecord.ID)
+                    .Include(so => so.Employee)
+                    .Include(so => so.Customer)
+                    .Include(so => so.PriorityInfo)
+                    .Include(so => so.StatusInfo)
+                    .Include(so => so.Service)
+                    .ToListAsync();
+            }
+
+            var serviceOrderDtos = serviceOrders.Select(so => new GetServiceOrderDto
+            {
+                OrderID = so.OrderID,
+                EmployeeName = so.Employee != null ? so.Employee.Name : "N/A",
+                CustomerName = so.Customer.Name,
+                CustomerEmail = so.Customer.Email,
+                CustomerPhone = so.Customer.Phone,
+                ServiceType = so.Service.ServiceType,
+                Priority = so.PriorityInfo.Priority,
+                Status = so.StatusInfo.Status,
+                CreationDate = so.CreationDate,
+                StartDate = so.StartDate,
+                CompletionDate = so.CompletionDate,
+                Comment = so.Comment ?? "Kein Kommentar",
+                Sum = so.Sum
+            }).ToList();
+
+            return Ok(serviceOrderDtos);
+        }
+
+
+
+
+
+        /// <summary>
         /// "Delete" Service Order (actually, just update status to "Gelöscht")
         /// </summary>
         /// <param name="orderId"></param>
