@@ -13,20 +13,23 @@ CREATE TABLE employees (
     Username varchar(255) NOT NULL UNIQUE,
     Password varchar(255) NOT NULL,
     Name varchar(255) NOT NULL,
+    loginAttempts INT DEFAULT 0,
+    isLocked BOOLEAN DEFAULT FALSE;
+
     PRIMARY KEY (EmployeeID)
 );
 
-INSERT INTO employees (Username, Name, Password) VALUES
-('employee1', 'Max Mustermann', SHA2('password', 256)),
-('employee2', 'Anna Schmidt', SHA2('password', 256)),
-('employee3', 'Felix Bauer', SHA2('password', 256)),
-('employee4', 'Laura Fischer', SHA2('password', 256)),
-('employee5', 'Niklas Weber', SHA2('password', 256)),
-('employee6', 'Julia Meyer', SHA2('password', 256)),
-('employee7', 'Leon Wagner', SHA2('password', 256)),
-('employee8', 'Sophie Becker', SHA2('password', 256)),
-('employee9', 'Tobias Hoffmann', SHA2('password', 256)),
-('employee10', 'Marie Schulz', SHA2('password', 256));
+INSERT INTO employees (Username, Name, Password, loginAttempts, isLocked) VALUES
+('employee1', 'Max Mustermann', SHA2('password', 256), 0, FALSE),
+('employee2', 'Anna Schmidt', SHA2('password', 256), 0, FALSE),
+('employee3', 'Felix Bauer', SHA2('password', 256), 0, FALSE),
+('employee4', 'Laura Fischer', SHA2('password', 256), 0, FALSE),
+('employee5', 'Niklas Weber', SHA2('password', 256), 0, FALSE),
+('employee6', 'Julia Meyer', SHA2('password', 256), 0, FALSE),
+('employee7', 'Leon Wagner', SHA2('password', 256), 0, FALSE),
+('employee8', 'Sophie Becker', SHA2('password', 256), 0, FALSE),
+('employee9', 'Tobias Hoffmann', SHA2('password', 256), 0, FALSE),
+('employee10', 'Marie Schulz', SHA2('password', 256), 0, FALSE);
 
 CREATE TABLE statuses (
     ID int NOT NULL AUTO_INCREMENT,
@@ -91,7 +94,7 @@ GRANT SELECT, INSERT, UPDATE ON skiservice_backend.customers TO 'api'@'localhost
 
 GRANT SELECT, INSERT, UPDATE ON skiservice_backend.serviceorders TO 'api'@'localhost';
 
-GRANT SELECT ON skiservice_backend.employees TO 'api'@'localhost';
+GRANT SELECT, UPDATE ON skiservice_backend.employees TO 'api'@'localhost';
 
 GRANT SELECT ON skiservice_backend.priorities TO 'api'@'localhost';
 
