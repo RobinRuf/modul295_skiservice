@@ -2,6 +2,8 @@
 
 Dieses Projekt ist eine Web-API für einen Skiservice. Es verwendet .NET für die Backend-Entwicklung.
 
+### INFO: Docker-Compose ist noch nicht möglich - folgt noch!
+
 ## Voraussetzungen
 
 - XAMPP (oder eine ähnliche Software) für MySQL und Apache
