@@ -71,7 +71,15 @@ Klonen Sie das Repository auf Ihren lokalen Rechner:
 
 ### Schritt 5: Zugriff auf die Anwendung
 
-Nachdem die Web-API läuft, können Sie auf die API-Endpunkte über `https://localhost:7214/swagger/index.html` zugreifen.
+Nachdem die Web-API läuft, können Sie auf die API-Endpunkte über `https://localhost:7214/swagger/index.html` zugreifen
+
+#### Frontend Routes
+- Mitarbeiter-Login
+     - /login.html
+
+#### Mitarbeiter Logindaten (Beispieldaten)
+Username ist fortlaufend (employee1, employee2, ..., employee10)\
+Passwort ist `password`
 
 ## Hinweis
 
