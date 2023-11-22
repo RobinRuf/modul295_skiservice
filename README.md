@@ -35,7 +35,39 @@ Klonen Sie das Repository auf Ihren lokalen Rechner:
 2. Stellen Sie sicher, dass die Web-API auf Port `7214` läuft. Sie können dies in den Einstellungen des Projekts unter `Properties -> launchSettings.json` überprüfen.
    Das ist wichtig, da die API Fetch-Calls im Frontend auf `localhost:7214` konfiguriert sind. Sollte jedoch der Standard-Port sein. Projekt starten, dann sehen Sie es in der URL.
    - [launchSettings.json](https://github.com/RobinRuf/modul295_skiservice/blob/main/SkiService/Properties/launchSettings.json)
-4. Starten Sie das Projekt **mit HTTPS**.
+3. Vergewissern Sie sich, dass die folgenden Pakete korrekt installiert sind:
+      - coverlet.collector by tonerdo
+        - Version: 3.2.0, 6.0.0
+      - Microsoft.AspNetCore.Authentication.JwtBearer by Microsoft
+        - Version: 7.0.14, 8.0.0
+      - Microsoft.AspNetCore.OpenApi by Microsoft
+        - Version: 7.0.10, 8.0.0
+      - Microsoft.EntityFrameworkCore by Microsoft
+        - Version: 7.0.13, 8.0.0
+      - Microsoft.EntityFrameworkCore.SqlServer by Microsoft
+        - Version: 7.0.13, 8.0.0
+      - Microsoft.EntityFrameworkCore.Tools by Microsoft
+        - Version: 7.0.13, 8.0.0
+      - Microsoft.IdentityModel.Tokens by Microsoft
+        - Version: 7.0.3
+      - Microsoft.NET.Test.Sdk by Microsoft
+        - Version: 17.6.0, 17.8.0
+      - Pomelo.EntityFrameworkCore.MySql by Laurents Meyer, Caleb Lloyd, Yuko Zheng
+        - Version: 7.0.0
+      - Serilog.AspNetCore by Microsoft,Serilog Contributors
+        - Version: 8.0.0
+      - Serilog.Sinks.File by Serilog Contributors
+        - Version: 5.0.0
+      - Swashbuckle.AspNetCore by Swashbuckle.AspNetCore
+        - Version: 6.5.0
+      - System.IdentityModel.Tokens.Jwt by Microsoft
+        - Version: 7.0.3
+      - xunit by jnewkirk,bradwilson
+        - Version: 2.4.2, 2.6.2
+      - xunit.runner.visualstudio by .NET Foundation and Contributors
+        - Version: 2.4.5, 2.5.4
+
+5. Starten Sie das Projekt **mit HTTPS**.
 
 ### Schritt 5: Zugriff auf die Anwendung
 
